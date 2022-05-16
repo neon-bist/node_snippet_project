@@ -5,8 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const constants_1 = require("./constants");
+const todos_1 = __importDefault(require("./routes/todos"));
 const app = (0, express_1.default)();
-app.get('/', (req, res) => {
-    res.send(`<div>Hi there </div>`);
-});
+app.use('/', todos_1.default);
 app.listen(constants_1.PORT, () => console.log(`Listening to ${constants_1.PORT}`));

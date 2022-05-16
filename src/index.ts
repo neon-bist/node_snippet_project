@@ -1,8 +1,7 @@
 import express from 'express';
 import { PORT } from './constants';
+import todoRouter from "./routes/todos";
 const app = express();
-app.get('/',(req, res)=>{
-  res.send(`<div>Hi there </div>`)
-})
+app.use('/', todoRouter);
 
 app.listen(PORT,()=>console.log(`Listening to ${PORT}`))
