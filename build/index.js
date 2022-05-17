@@ -7,5 +7,7 @@ const express_1 = __importDefault(require("express"));
 const constants_1 = require("./constants");
 const todos_1 = __importDefault(require("./routes/todos"));
 const app = (0, express_1.default)();
+app.use(express_1.default.json());
+app.use(express_1.default.urlencoded({ extended: true }));
 app.use('/', todos_1.default);
 app.listen(constants_1.PORT, () => console.log(`Listening to ${constants_1.PORT}`));
